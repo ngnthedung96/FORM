@@ -1,0 +1,8 @@
+/* Big tablet to 1200px; */
+@media only screen and(min-width:700px) and (max-width:1200px){
+
+}
+/* Small tablet to big tablet from 768x to 1023px */
+@media only screen and (max-width: 1023px){
+    
+}
