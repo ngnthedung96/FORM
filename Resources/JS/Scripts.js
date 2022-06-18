@@ -23,24 +23,29 @@ function Validate(inputElement, rule,options){
         }
     }
     return errorMessage
+    // return có lỗi hay không
 }
 function Validator (options){
     var formElementSubmit = document.querySelector(options.formSubmit)
+    // đặt biến check lỗi
     var isErrors = []
     formElementSubmit.addEventListener('click', function(e){
         e.preventDefault()
         options.rules.forEach(rule => {
             var inputElement = formElement.querySelector(rule.selector)
             Validate(inputElement,rule,options)
+            // dùng vòng lặp validate từng input
             if(Validate(inputElement,rule,options)){
                 isErrors.push(true) 
             } else{
                 isErrors.push(false)
             }
         })
+        // tìm lỗi trong biến đã đặt
         var checkError = isErrors.find(function(value, index){
             return value = true
         })
+        // nếu không có lỗi
         if (!checkError){
             valueOfInputElement = document.querySelectorAll("[name]")
             var data = {}
